@@ -1,0 +1,40 @@
+{
+  "name": "endl-cli",
+  "version": "0.1.0",
+  "description": "Link extractor, downloader, executer, unzipper. A CLI for endl",
+  "author": {
+    "name": "Doğan Çelik",
+    "email": "dogancelik93@gmail.com"
+  },
+  "keywords": [
+    "scraper",
+    "extractor",
+    "downloader",
+    "executer",
+    "unzipper",
+    "cli",
+    "command line",
+    "client"
+  ],
+  "license": "Custom license",
+  "preferGlobal": true,
+  "bin": {
+    "endl": "bin/endl.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dogancelik/endl-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dogancelik/endl-cli/issues"
+  },
+  "dependencies": {
+    "coffee-script": "^1.9.2",
+    "endl": "^0.3.0",
+    "yargs": "^3.8.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.4",
+    "should": "^6.0.1"
+  }
+}
