@@ -9,7 +9,7 @@ argv = yargs
 .command('d', 'Loads a page, finds an element, downloads a link')
 .command('de', 'Same as d, but executes the file with arguments')
 .command('dx', 'Same as d, but extracts the file with options')
-.command('l', 'Load a JavaScript/CoffeeScript/JSON/CSON file')
+.command('l', 'Load a JSON or YAML file')
 .demand(1, 'You need to provide a command')
 .option(
   't':
@@ -79,6 +79,7 @@ argv = yargs
 )
 .help('h')
 .alias('h', 'help')
+.version(-> require('../package.json').version)
 .argv
 
 [command, url, find] = argv._
