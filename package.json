@@ -16,7 +16,7 @@
     "command line",
     "client"
   ],
-  "license": "Custom license",
+  "license": "SEE LICENSE IN LICENSE.md",
   "preferGlobal": true,
   "bin": {
     "endl": "bin/endl.js"
