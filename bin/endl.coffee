@@ -93,6 +93,8 @@ downloadFile = (yargs, options, numRequired) ->
 
   [command, url, find] = argv._
 
+  return endl.load(url) if command == 'l'
+
   useText = argv.T
   attr = argv.a
   index = parseInt(argv.i, 10)
@@ -142,9 +144,6 @@ downloadFile = (yargs, options, numRequired) ->
 
           file.extract extractOptions, (extractData) ->
             console.log "Total number of files extracted:", extractData.length
-
-  else if command == 'l'
-    endl.load url
 
 argv = yargs
 .usage('Usage: endl <command>')
