@@ -28,6 +28,7 @@
   "bugs": {
     "url": "https://github.com/dogancelik/endl-cli/issues"
   },
+  "homepage": "https://github.com/dogancelik/endl-cli",
   "dependencies": {
     "coffee-script": "^1.9.2",
     "endl": "0.x",
