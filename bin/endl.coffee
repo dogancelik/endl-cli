@@ -86,7 +86,6 @@ downloadFile = (yargs, options, numRequired) ->
   argv = yargs
     .usage downloadCommandUsage
     .option options
-    .help 'help'
     .argv
 
   return yargs.showHelp() if argv._.length < numRequired
@@ -131,6 +130,7 @@ downloadFile = (yargs, options, numRequired) ->
           execOptions =
             args: argv.args.split('|')
 
+          console.log "Executing file with arguments: #{execOptions.args.join(', ')}"
           file.execute execOptions
 
         if command == 'dx'

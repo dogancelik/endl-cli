@@ -1,6 +1,6 @@
 {
   "name": "endl-cli",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "description": "Link extractor, downloader, executer, unzipper. A CLI for endl",
   "author": {
     "name": "Doğan Çelik",
@@ -31,8 +31,8 @@
   "homepage": "https://github.com/dogancelik/endl-cli",
   "dependencies": {
     "coffee-script": "^1.9.2",
-    "endl": "0.x",
-    "yargs": "^3.8.0"
+    "endl": "1.x",
+    "yargs": "10.x"
   },
   "devDependencies": {
     "mocha": "^2.2.4",

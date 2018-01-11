@@ -21,9 +21,3 @@ endl d "http://www.mp3tag.de/en/download.html" "div.download a"
 ```
 
 ### [More examples](https://github.com/dogancelik/endl-cli/wiki/Examples)
-
-## To-Do
-
-* Modularize CLI
-* Add tests
-* Use CLI as a package manager (maybe)
