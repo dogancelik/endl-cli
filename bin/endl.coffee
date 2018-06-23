@@ -4,6 +4,7 @@ endl = require 'endl'
 yargs = require 'yargs'
 { parse } = require 'url'
 { _extend } = require 'util'
+ProgressBar = require 'progress'
 
 yargsMainOptions =
   't':
@@ -122,7 +123,10 @@ downloadFile = (yargs, options, numRequired) ->
     containerPromise = (endl.page(url)[if useCheerio then 'find' else 'findXpath'])(find)
     containerPromise.then (container) ->
       attrInstance = container.index(index)[if useText then 'text' else 'attr'](attr)
-      file = attrInstance.download downloadOptions, (data) ->
+
+      bar = null
+      downloadEnd = (data) ->
+        bar.update 1
         console.log "Download URL: #{data.url}"
         console.log "File is saved to: #{data.file}"
 
@@ -144,6 +148,18 @@ downloadFile = (yargs, options, numRequired) ->
 
           file.extract extractOptions, (extractData) ->
             console.log "Total number of files extracted:", extractData.length
+
+      file = attrInstance.download downloadOptions,
+        progress: (state) ->
+          if bar == null
+            bar = new ProgressBar 'Downloading [:bar] <:current/:total> <:rate/bps> <:etas>',
+              total: state.size.total
+              current: state.size.transferred
+          else
+            bar.update state.percent,
+              current: state.size.transferred
+        error: (err) -> console.error err
+        end: downloadEnd
 
 argv = yargs
 .usage('Usage: endl <command>')
